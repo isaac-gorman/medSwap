@@ -1,0 +1,97 @@
+.App {
+  text-align: center;
+}
+
+.treatment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.treatment-form-div {
+  width: 25%;
+}
+
+#treatment-form-button {
+  width: 50%;
+  margin: 5% auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card {
+  width: 80%;
+  padding: 5%;
+  margin: 5% auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile-credentials-div {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+.profile-adjustment-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.delete-profile-text {
+  color: #f44336;
+}
+
+.profile-card-gray {
+  background-color: #dcdcdc;
+}
+
+.delete-background {
+  background-color: #dcdcdc;
+  display: none;
+}
+
+#delete-are-you-sure {
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 40%;
+  margin: 10% auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0.8;
+  border: none;
+}
+
+.delete-are-you-sure p {
+  font-size: 2rem;
+}
+
+#profile-img {
+  width: 30%;
+  overflow: none;
+}
+
+#gray-out-background {
+  background-color: #dcdcdc;
+  border: none;
+}
+
+#img-gray-out-background {
+  width: 30%;
+  overflow: none;
+  opacity: 0.2;
+}
+
+.login-form {
+  display: flex;
+  width: 30%;
+  margin: 5% auto;
+}
