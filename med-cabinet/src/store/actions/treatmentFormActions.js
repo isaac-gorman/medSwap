@@ -32,7 +32,7 @@ export const DELETE_STRAIN_ERROR = "DELETE_STRAIN_ERROR";
 
 // server API url
 const url = "https://medswap.herokuapp.com/api/";
-const vercel = "https://fe-dg-medswap-7l85r0eel.vercel.app/";
+const vercel = "https://med-swap-project.vercel.app";
 // action creators
 
 // Login
@@ -46,7 +46,8 @@ export const loginUser = (info) => {
         console.log(res.data.user, "<==== SUCCESSFUL LOGIN DATA");
         localStorage.setItem("token", res.data.token);
         // window.location = `${vercel}protected`;
-        window.location = `http://localhost:3000/protected`;
+        // window.location = `http://localhost:3000/protected`;
+        window.location = `${vercel}/protected`;
         dispatch({
           type: LOGIN_USER_SUCCESS,
           payload: res.data.user,
@@ -78,7 +79,7 @@ export const registerUser = (info) => {
         dispatch({ type: REGISTER_USER_ERROR, payload: err });
       })
       .finally(() => {
-        window.location = `http://localhost:3000/login`;
+        window.location = `${vercel}/login`;
       });
   };
 };
