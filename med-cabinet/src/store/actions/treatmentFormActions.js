@@ -165,7 +165,8 @@ export const deleteProfile = (user, id) => {
 export const saveTreatment = (info) => {
   return (dispatch) => {
     console.log("I am the info", info);
-    axiosWithAuth()
+    // axiosWithAuth()
+    axios
       .post("/savedstrains", info)
       .then((res) => {
         console.log("I am the res ", res);
