@@ -9,11 +9,21 @@ import Register from "./components/Register";
 import Profile from "./components/Profile";
 import "./App.css";
 import { PrivateRoute } from "./components/PrivateRoute";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 function App() {
   return (
     <Router>
+      <Route>
+        <Redirect to="/register" />
+      </Route>
+
       <Route exact path="/register">
         <Register />
       </Route>
