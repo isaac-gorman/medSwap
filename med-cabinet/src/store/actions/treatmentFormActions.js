@@ -167,7 +167,7 @@ export const saveTreatment = (info) => {
     console.log("I am the info", info);
     // axiosWithAuth()
     axios
-      .post("/savedstrains", info)
+      .post("https:/medswap.herokuapp.com/api/savedstrains", info)
       .then((res) => {
         console.log("I am the res ", res);
         dispatch({ type: SAVE_STRAIN_SUCCESS, payload: res.data.data });
