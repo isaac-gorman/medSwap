@@ -165,9 +165,10 @@ export const deleteProfile = (user, id) => {
 export const saveTreatment = (info) => {
   return (dispatch) => {
     console.log("I am the info", info);
+    console.log("UPDATE", info);
     // axiosWithAuth()
     axios
-      .post("https:/medswap.herokuapp.com/api/savedstrains", info)
+      .post("https://medswap.herokuapp.com/api/savedstrains", info)
       .then((res) => {
         console.log("I am the res ", res);
         dispatch({ type: SAVE_STRAIN_SUCCESS, payload: res.data.data });
