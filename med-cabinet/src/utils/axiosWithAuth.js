@@ -6,7 +6,7 @@ export const axiosWithAuth = () => {
     // baseURL: "https:/medswap.herokuapp.com/api/",
     headers: {
       Authorization: token,
-      "Access-Control-Allow-Origin": "*",
+      // "Access-Control-Allow-Origin": "*",
     },
   });
 };
