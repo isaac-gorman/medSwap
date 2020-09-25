@@ -43,9 +43,7 @@ export const loginUser = (info) => {
     axios
       .post("https://medswap.herokuapp.com/api/auth/login", info)
       .then((res) => {
-        console.log(res.data.user, "<==== SUCCESSFUL LOGIN DATA");
         localStorage.setItem("token", res.data.token);
-        // window.location = `${vercel}protected`;
         window.location = `${vercel}/protected/${res.data.user.id}`;
         dispatch({
           type: LOGIN_USER_SUCCESS,
