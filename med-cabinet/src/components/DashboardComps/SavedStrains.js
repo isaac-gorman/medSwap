@@ -22,11 +22,12 @@ const SavedStrainWrapper = styled.div`
   border-top: 0.5px solid #bdbdbd;
   border-bottom: 0.5px solid #bdbdbd;
   display: flex;
+  align-items: center;
 `;
 
 const SavedStrainSignifierWrapper = styled.div`
   width: 200px;
-  height: 100px;
+  height: 120px;
   // background: yellow;
   display: flex;
   justify-content: flex-start;
@@ -38,7 +39,8 @@ const SavedStrainsContainer = styled.div`
   height: 100px;
   // background: lightblue;
   display: flex;
-  // justify-content: flex-start;
+  // padding-bottom: 200px
+  justify-content: center;
   // align-items: center;
 
   // carousel styling
@@ -47,12 +49,14 @@ const SavedStrainsContainer = styled.div`
 `;
 
 const Track = styled.div`
+  background: lightblue;
+  // padding-bottom: 200px
   width: 100%;
   display: flex;
   overflow-x: scroll;
 
-  justify-content: flex-start;
-  align-items: center;
+  // justify-content: flex-start;
+  // align-items: center;
 `;
 
 const NoSavedItemsContainer = styled.div`
@@ -70,11 +74,14 @@ const NoItemsText = styled.p`
 `;
 
 const SavedStrainCard = styled.div`
-  width: 180px;
+  width: 220px;
   height: 80px;
   border-radius: 10px;
-  border: 0.5px solid #828282;
+  // border: 0.5px solid #828282;
   margin-left: 20px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px -0.51px 4.48819px rgba(0, 0, 0, 0.25);
 `;
 
 const SaveIcon = styled.img`
@@ -90,8 +97,11 @@ const SavedStrainSignifier = styled.p`
   // background: lightblue;
 `;
 
-const StrainName = styled.path`
-  font-size: 0.5em;
+const StrainName = styled.p`
+  font-family: "Gotham-Medium";
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
 `;
 
 const SavedStrains = ({ savedStrains }) => {
@@ -116,7 +126,10 @@ const SavedStrains = ({ savedStrains }) => {
           <Track>
             {savedStrains.map((item) => {
               return (
-                <Link to={`/strainpage/${item.id}`}>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/strainpage/${item.id}`}
+                >
                   <SavedStrainCard key={item.id}>
                     <StrainName>{item.Name}</StrainName>
                   </SavedStrainCard>
