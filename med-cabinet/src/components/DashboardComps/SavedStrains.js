@@ -76,7 +76,7 @@ const NoItemsText = styled.p`
 
 const SavedStrainCard = styled.div`
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   width: 240px;
   height: 80px;
@@ -86,6 +86,13 @@ const SavedStrainCard = styled.div`
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
     0px -0.51px 4.48819px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    background: #f3f7f9;
+  }
+  &:active {
+    background: #ecf9ff;
+  }
 `;
 
 const SaveIcon = styled.img`
@@ -118,6 +125,7 @@ const StrainName = styled.p`
 const StrainImage = styled.img`
   width: 40px;
   height: 40px;
+  margin-left: 20px;
 `;
 
 const SavedStrains = ({ savedStrains }) => {

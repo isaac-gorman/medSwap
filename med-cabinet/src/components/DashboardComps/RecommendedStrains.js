@@ -33,11 +33,13 @@ const NoRecIcon = styled.img`
 `;
 
 const NoStrainsText = styled.p`
+  font-family: "Gotham-Book";
   color: #bdbdbd;
   font-size: 0.75em;
 `;
 
 const CalculatingText = styled.h5`
+  font-family: "Gotham-Book";
   color: #e26276;
   font-size: 0.75em;
 `;
