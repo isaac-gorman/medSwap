@@ -92,6 +92,7 @@ const SavedStrainCard = styled.div`
   }
   &:active {
     background: #ecf9ff;
+    box-shadow: inset 0px 0.49px 4.48819px rgba(0, 0, 0, 0.25);
   }
 `;
 
