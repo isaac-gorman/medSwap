@@ -107,6 +107,12 @@ const StrainName = styled.p`
   color: #828282;
   text-decoration: none;
   margin-left: 10px;
+  &:hover {
+    color: #9ab8e9;
+  }
+  &:active {
+    color: #4285f4;
+  }
 `;
 
 const StrainImage = styled.img`
