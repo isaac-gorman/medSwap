@@ -46,8 +46,8 @@ export const loginUser = (info) => {
         console.log(res.data.user, "<==== SUCCESSFUL LOGIN DATA");
         localStorage.setItem("token", res.data.token);
         // window.location = `${vercel}protected`;
-        // window.location = `http://localhost:3000/protected`;
-        window.location = `${vercel}/protected`;
+        window.location = `http://localhost:3000/protected`;
+        // window.location = `${vercel}/protected`;
         dispatch({
           type: LOGIN_USER_SUCCESS,
           payload: res.data.user,
@@ -79,7 +79,8 @@ export const registerUser = (info) => {
         dispatch({ type: REGISTER_USER_ERROR, payload: err });
       })
       .finally(() => {
-        window.location = `${vercel}/login`;
+        window.location = `http://localhost:3000/login`;
+        // window.location = `${vercel}/login`;
       });
   };
 };
@@ -156,7 +157,8 @@ export const deleteProfile = (user, id) => {
         });
       })
       .finally(() => {
-        window.location = `${vercel}`;
+        window.location = `http://localhost:3000/`;
+        // window.location = `${vercel}`;
       });
   };
 };
