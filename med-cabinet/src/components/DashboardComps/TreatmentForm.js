@@ -15,6 +15,11 @@ const FormContainer = styled.div`
   border-bottom: 0.75px solid #bdbdbd;
 `;
 
+const FormSubHeadingText = styled.p`
+  font-family: "Gotham-Medium";
+  font-size: 18px;
+`;
+
 // object of array to help properly sort the accordian lists
 const themes = [
   {
@@ -78,7 +83,7 @@ const TreatmentForm = ({ symptoms, addTreatment }) => {
           marginBottom: "100px",
         }}
       >
-        <h6>What do you want to treat?</h6>
+        <FormSubHeadingText>What do you want to treat?</FormSubHeadingText>
         <form style={{ width: "100%" }}>
           {themes.map((theme) => (
             <CustomAccordian

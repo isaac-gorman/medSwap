@@ -1,13 +1,49 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@font-face {
+  font-family: "Gotham-Medium";
+  src: url("./typeface/Gotham-Medium.woff2") format("woff2"),
+    url("./typeface/Gotham-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* font-display: swap; */
+}
+
+@font-face {
+  font-family: "Gotham-Book";
+  src: url("./typeface/Gotham-Book.woff2") format("woff2"),
+    url("./typeface/Gotham-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* font-display: swap; */
+}
+
+@font-face {
+  font-family: "Gotham-Light";
+  src: url("./typeface/Gotham-Light.woff2") format("woff2"),
+    url("./typeface/Gotham-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* font-display: swap; */
+}
+
+@font-face {
+  font-family: "AGaramondPro-Bold";
+  src: url("./typeface/AGaramondPro-Bold.woff2") format("woff2"),
+    url("./typeface/AGaramondPro-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* font-display: swap; */
 }
