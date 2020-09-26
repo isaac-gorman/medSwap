@@ -22,8 +22,21 @@ const SavedStrainsContainer = styled.div`
   height: 100px;
   border-top: 0.5px solid #bdbdbd;
   border-bottom: 0.5px solid #bdbdbd;
-  // background: yellow;
+  // background: lightblue;
   display: flex;
+  // justify-content: flex-start;
+  // align-items: center;
+
+  // carousel styling
+  overflow: hidden;
+  white-space: nowrap;
+`;
+
+const Track = styled.div`
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+
   justify-content: flex-start;
   align-items: center;
 `;
@@ -78,17 +91,19 @@ const SavedStrains = ({ savedStrains }) => {
   } else {
     return (
       <SavedStrainsContainer>
-        <SaveIcon src={saveIcon} alt="save icon" />
-        <SavedStrainSignifier>Saved Strains</SavedStrainSignifier>
-        {savedStrains.map((item) => {
-          return (
-            <Link to={`/strainpage/${item.id}`}>
-              <SavedStrainCard key={item.id}>
-                <StrainName>{item.Name}</StrainName>
-              </SavedStrainCard>
-            </Link>
-          );
-        })}
+        <Track>
+          <SaveIcon src={saveIcon} alt="save icon" />
+          <SavedStrainSignifier>Saved Strains</SavedStrainSignifier>
+          {savedStrains.map((item) => {
+            return (
+              <Link to={`/strainpage/${item.id}`}>
+                <SavedStrainCard key={item.id}>
+                  <StrainName>{item.Name}</StrainName>
+                </SavedStrainCard>
+              </Link>
+            );
+          })}
+        </Track>
       </SavedStrainsContainer>
     );
   }
