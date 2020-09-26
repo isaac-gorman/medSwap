@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import StrainPage from "./StrainPage";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import savedIcon from "./assets/savedIcon.svg";
+import savedStrainIcon from "./assets/savedStrainIcon.svg";
 
 const NoSavedStrainsContainer = styled.div`
   width: 100%;
@@ -49,14 +50,14 @@ const SavedStrainsContainer = styled.div`
 `;
 
 const Track = styled.div`
-  background: lightblue;
+  // background: lightblue;
   // padding-bottom: 200px
   width: 100%;
   display: flex;
   overflow-x: scroll;
 
-  // justify-content: flex-start;
-  // align-items: center;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const NoSavedItemsContainer = styled.div`
@@ -74,7 +75,10 @@ const NoItemsText = styled.p`
 `;
 
 const SavedStrainCard = styled.div`
-  width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
   height: 80px;
   border-radius: 10px;
   // border: 0.5px solid #828282;
@@ -100,8 +104,14 @@ const SavedStrainSignifier = styled.p`
 const StrainName = styled.p`
   font-family: "Gotham-Medium";
   font-size: 12px;
-  color: black;
+  color: #828282;
   text-decoration: none;
+  margin-left: 10px;
+`;
+
+const StrainImage = styled.img`
+  width: 40px;
+  height: 40px;
 `;
 
 const SavedStrains = ({ savedStrains }) => {
@@ -131,6 +141,7 @@ const SavedStrains = ({ savedStrains }) => {
                   to={`/strainpage/${item.id}`}
                 >
                   <SavedStrainCard key={item.id}>
+                    <StrainImage src={savedStrainIcon} alt="strain icon" />
                     <StrainName>{item.Name}</StrainName>
                   </SavedStrainCard>
                 </Link>
