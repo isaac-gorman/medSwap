@@ -79,6 +79,7 @@ export const registerUser = (info) => {
         dispatch({ type: REGISTER_USER_ERROR, payload: err });
       })
       .finally(() => {
+        // window.location = `http://localhost:3000/login`;
         window.location = `${vercel}/login`;
       });
   };
@@ -156,6 +157,7 @@ export const deleteProfile = (user, id) => {
         });
       })
       .finally(() => {
+        // window.location = `http://localhost:3000/`;
         window.location = `${vercel}`;
       });
   };

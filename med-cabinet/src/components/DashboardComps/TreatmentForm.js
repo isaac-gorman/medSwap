@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import CustomAccordian from "./CustomAccordian";
 import { addTreatment } from "../../store/actions/treatmentFormActions";
 import { FormControlLabel, List, Typography } from "@material-ui/core";
+import formIcon from "./assets/formIcon.svg";
 
 import styled from "styled-components";
 
@@ -13,6 +14,45 @@ const FormContainer = styled.div`
   border-top: 0.75px solid #bdbdbd;
   border-right: 0.75px solid #bdbdbd;
   border-bottom: 0.75px solid #bdbdbd;
+`;
+
+const FormHeadingContainer = styled.div`
+  display: flex;
+  // align-items: flex-start;
+  // background: lightblue;
+  margin-top: 40px;
+  margin-bottom: 20px;
+`;
+
+const FormHeadingText = styled.p`
+  // width: 200px;
+  font-family: "AGaramondPro-Bold";
+  font-size: 36px;
+  // background: yellow;
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+`;
+
+const FormIcon = styled.img`
+  // font-family: "Gotham-Medium";
+  width: 35px;
+  height: 34px;
+  margin-bottom: 0px;
+`;
+
+const FormHeadingDivider = styled.div`
+  width: 100%;
+  height: 0px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  margin-bottom: 40px;
+`;
+
+const FormSubHeadingText = styled.p`
+  font-family: "Gotham-Medium";
+  font-size: 16px;
+  margin-bottom: 40px;
 `;
 
 // object of array to help properly sort the accordian lists
@@ -78,7 +118,13 @@ const TreatmentForm = ({ symptoms, addTreatment }) => {
           marginBottom: "100px",
         }}
       >
-        <h6>What do you want to treat?</h6>
+        <FormHeadingContainer>
+          <FormIcon src={formIcon} alt="form icon" />
+          <FormHeadingText>Treatment Form</FormHeadingText>
+        </FormHeadingContainer>
+        <FormHeadingDivider />
+
+        <FormSubHeadingText>What do you want to treat?</FormSubHeadingText>
         <form style={{ width: "100%" }}>
           {themes.map((theme) => (
             <CustomAccordian
