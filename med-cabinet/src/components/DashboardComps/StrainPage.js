@@ -8,26 +8,29 @@ import saveIcon from "./assets/saveIcon.svg";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import { deleteStrain } from "../../store/actions/treatmentFormActions";
 import loadingStrains from "./assets/loadingStrains.gif";
+import savedStrainIcon from "./assets/savedStrainIcon.svg";
 
 // setTimeout(function () {}, 3500);
 
 const StrainPageContainer = styled.div`
   width: 100%;
-  height: 70vh;
+  margin-top: 40px;
+  // height: 70vh;
   background: yellow;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
 `;
 
 const LeftWrapper = styled.div`
+  margin-left: 60px;
   width: 50%;
-  height: 90%;
+  // height: 90%;
   background: blue;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
 `;
 
 const RightWrapper = styled.div`
@@ -36,12 +39,12 @@ const RightWrapper = styled.div`
   background: lightblue;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  // align-items: center;
 `;
 
 const LInfo = styled.div`
-  width: 300px;
+  width: 400px;
   height: 300px;
   background: white;
   display: flex;
@@ -49,6 +52,7 @@ const LInfo = styled.div`
 `;
 
 const Name = styled.h5`
+  font-family: "Gotham-Book";
   font-size: 1em;
 `;
 
@@ -85,6 +89,29 @@ const Spinner = styled.img`
   height: 60px;
 `;
 
+const FlexWrapper = styled.div`
+  display: flex;
+`;
+
+const ImageDiv = styled.div``;
+
+const StrainImage = styled.img`
+  width: 60px;
+  height: 60px;
+  margin-left: 20px;
+`;
+
+const StrainDetailHeading = styled.h6`
+  font-family: "Gotham-Book";
+  font-size: 14px;
+`;
+
+const StrainDetailText = styled.p`
+  width: 320px;
+  font-family: "Gotham-Light";
+  font-size: 14px;
+`;
+
 const StrainPage = ({ deleteStrain }) => {
   const [strainData, setStrainData] = useState([]);
   const [fetching, setFetching] = useState(false);
@@ -115,7 +142,7 @@ const StrainPage = ({ deleteStrain }) => {
         .catch((err) => {
           console.log(err);
         });
-    }, 1000);
+    }, 500);
     return setFetching(true);
   }, [id]);
 
@@ -125,7 +152,7 @@ const StrainPage = ({ deleteStrain }) => {
     <div>
       <Header />
       <SavedStrains />
-      {!strainData[0] || fetching === true ? (
+      {fetching === true ? (
         <LoadingStrainContainer>
           <Spinner src={loadingStrains} alt="loading spinner" />
         </LoadingStrainContainer>
@@ -135,14 +162,28 @@ const StrainPage = ({ deleteStrain }) => {
             <StrainPageContainer>
               <LeftWrapper>
                 <LInfo>
-                  <Name>{item.Name}</Name>
+                  <FlexWrapper>
+                    <ImageDiv>
+                      <StrainImage src={savedStrainIcon} alt="strain icon" />
+                    </ImageDiv>
+                    <Name>{item.Name}</Name>
+                  </FlexWrapper>
                   <SaveButton onClick={handleClick}>
                     <SaveTxt>Unsave Strain</SaveTxt>
                     <SaveIcon src={saveIcon} alt="save icon" />
                   </SaveButton>
                 </LInfo>
               </LeftWrapper>
-              <RightWrapper></RightWrapper>
+              <RightWrapper>
+                <StrainDetailHeading>Strain Description</StrainDetailHeading>
+                <StrainDetailText>{item.Description}</StrainDetailText>
+
+                <StrainDetailHeading>Effects</StrainDetailHeading>
+                <StrainDetailText>{item.Positive_Effects}</StrainDetailText>
+
+                <StrainDetailHeading>Treatment Reviews</StrainDetailHeading>
+                <StrainDetailText>{item.Rating}</StrainDetailText>
+              </RightWrapper>
             </StrainPageContainer>
           );
         })
