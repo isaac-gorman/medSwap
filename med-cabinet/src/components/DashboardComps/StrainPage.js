@@ -16,17 +16,17 @@ const StrainPageContainer = styled.div`
   width: 100%;
   margin-top: 40px;
   // height: 70vh;
-  background: yellow;
+  // background: yellow;
   display: flex;
   // justify-content: center;
   // align-items: center;
 `;
 
 const LeftWrapper = styled.div`
-  margin-left: 60px;
+  margin-left: 100px;
   width: 50%;
   // height: 90%;
-  background: blue;
+  // background: blue;
   display: flex;
   flex-direction: column;
   // justify-content: center;
@@ -36,7 +36,7 @@ const LeftWrapper = styled.div`
 const RightWrapper = styled.div`
   width: 50%;
   height: 90%;
-  background: lightblue;
+  // background: lightblue;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -52,8 +52,10 @@ const LInfo = styled.div`
 `;
 
 const Name = styled.h5`
-  font-family: "Gotham-Book";
-  font-size: 1em;
+  // background: yellow;
+  font-family: "AGaramondPro-Bold";
+  font-size: 64px;
+  margin-top: 0px;
 `;
 
 const SaveButton = styled.div`
@@ -66,7 +68,15 @@ const SaveButton = styled.div`
 `;
 
 const SaveTxt = styled.p`
+  font-family: "Gotham-Book";
+  font-size: 12px;
   font-size: 0.75em;
+  &:hover {
+    color: #9ab8e9;
+  }
+  &:active {
+    color: #4285f4;
+  }
 `;
 
 const SaveIcon = styled.img`
@@ -91,6 +101,7 @@ const Spinner = styled.img`
 
 const FlexWrapper = styled.div`
   display: flex;
+  // background: yellow;
 `;
 
 const ImageDiv = styled.div``;
@@ -102,14 +113,35 @@ const StrainImage = styled.img`
 `;
 
 const StrainDetailHeading = styled.h6`
+  margin-top: 0px;
+  margin-bottom: 10px;
   font-family: "Gotham-Book";
   font-size: 14px;
 `;
 
 const StrainDetailText = styled.p`
+  margin-top: 0px;
+  margin-bottom: 0px;
   width: 320px;
   font-family: "Gotham-Light";
   font-size: 14px;
+`;
+
+const StrainRatingText = styled.h6`
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 320px;
+  font-family: "Gotham-Medium";
+  font-size: 32px;
+`;
+
+const SectionDivider = styled.div`
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 80%;
+  // height: 0px;
+  border-bottom: 0.1px solid #bdbdbd;
+  // border-radius: 20px;
 `;
 
 const StrainPage = ({ deleteStrain }) => {
@@ -164,7 +196,7 @@ const StrainPage = ({ deleteStrain }) => {
                 <LInfo>
                   <FlexWrapper>
                     <ImageDiv>
-                      <StrainImage src={savedStrainIcon} alt="strain icon" />
+                      {/* <StrainImage src={savedStrainIcon} alt="strain icon" /> */}
                     </ImageDiv>
                     <Name>{item.Name}</Name>
                   </FlexWrapper>
@@ -177,12 +209,13 @@ const StrainPage = ({ deleteStrain }) => {
               <RightWrapper>
                 <StrainDetailHeading>Strain Description</StrainDetailHeading>
                 <StrainDetailText>{item.Description}</StrainDetailText>
-
+                <SectionDivider />
                 <StrainDetailHeading>Effects</StrainDetailHeading>
                 <StrainDetailText>{item.Positive_Effects}</StrainDetailText>
-
+                <SectionDivider />
                 <StrainDetailHeading>Treatment Reviews</StrainDetailHeading>
-                <StrainDetailText>{item.Rating}</StrainDetailText>
+                <StrainRatingText>{item.Rating}</StrainRatingText>
+                <SectionDivider />
               </RightWrapper>
             </StrainPageContainer>
           );
