@@ -14,7 +14,7 @@ const RecommendedStrainsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const NoRecStrainsContainer = styled.div`
@@ -49,20 +49,24 @@ const Spinner = styled.img`
 `;
 
 const CardContainer = styled.div`
-  width: 200px;
+  width: 80%;
   height: 600px;
-  border: 0.5px solid #bdbdbd;
+  // border: 0.5px solid #bdbdbd;
   margin-top: 10px;
   margin-bottom: 100px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
   // justify-content: center;
-  align-items: center;
+  // align-items: center;
 `;
 
-const RecText = styled.h6`
-  width: 420px;
-  text-align: left;
+const RecText = styled.p`
+  font-family: "Gotham-Book";
+  font-size: 12px;
+  margin-top: 40px;
+  // width: 420px;
+  // text-align: left;
 `;
 
 const CardWrapper = styled.div`
@@ -70,29 +74,87 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
 `;
 
-const SaveButton = styled.div`
-  width: 90%;
+const SaveButton = styled.button`
+  width: 100px;
   height: 40px;
   display: flex;
-  justify-content: flex-end;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
   align-items: center;
   // background: yellow;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px -0.51px 4.48819px rgba(0, 0, 0, 0.25);
+  &:hover {
+    background: #f3f7f9;
+  }
+  &:active {
+    background: #ecf9ff;
+    box-shadow: inset 0px 0.49px 4.48819px rgba(0, 0, 0, 0.25);
+  }
 `;
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  just
+  width: 100%;
+  justify-content: flex-end;
+  // height: 100px;
+  // background: yellow;
+`;
 const SaveTxt = styled.p`
-  font-size: 0.75em;
+  font-family: "Gotham-Book";
+  font-size: 12px;
 `;
 
 const SaveIcon = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 `;
 
 const RecommendedStrainName = styled.h2`
   font-family: "AGaramondPro-Bold";
+  font-size: 64px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+`;
+
+const TitleInfo = styled.p`
+  margin-right: 10px;
+  font-family: "Gotham-Light";
+  font-size: 16px;
+`;
+
+const RatingText = styled.p`
+  font-family: "Gotham-Book";
+  font-size: 16px;
+`;
+
+const QuickInfoDiv = styled.div`
+  margin-top: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // background: yellow;
+`;
+
+const RatingWrapper = styled.div`
+  width: 100px;
+  // margin-left: 20px;
+  display: flex;
+  // background: lightblue;
+`;
+
+const EffectsWrapper = styled.div`
+  width: 400px;
+  margin-left: 20px;
+  display: flex;
+  // background: lightblue;
 `;
 
 const RecommendedStrains = ({
@@ -149,30 +211,29 @@ const RecommendedStrains = ({
   } else {
     return (
       <RecommendedStrainsContainer>
-        <RecText>Recommended Treatment</RecText>
         <CardContainer>
+          <RecText>Recommended Treatment</RecText>
           <CardWrapper>
-            <SaveButton onClick={handleClick}>
-              <SaveTxt>Save</SaveTxt>
-              <SaveIcon src={saveIcon} alt="save icon" />
-            </SaveButton>
+            <ButtonWrapper>
+              <SaveButton onClick={handleClick}>
+                <SaveIcon src={saveIcon} alt="save icon" />
+                <SaveTxt>Save</SaveTxt>
+              </SaveButton>
+            </ButtonWrapper>
             <RecommendedStrainName>
               {recommendedStrain.Name}
             </RecommendedStrainName>
-            {/* <IntroDataDiv>
-              <IconDiv>
-                <TreatmentIcon />
-              </IconDiv>
-              <IntroDataDiv>
-                <Name>{recommendedStrain.Name}</Name>
-                <RatingDiv>
-                  <TopRatedDiv>
-                    <RewardIcon />
-                    <RewardTxt>Top Rated</RewardTxt>
-                  </TopRatedDiv>
-                </RatingDiv>
-              </IntroDataDiv>
-            </IntroDataDiv> */}
+            <QuickInfoDiv>
+              <RatingWrapper>
+                <TitleInfo>Rating</TitleInfo>
+                <RatingText>{recommendedStrain.Rating}</RatingText>
+              </RatingWrapper>
+
+              <EffectsWrapper>
+                <TitleInfo>Effects</TitleInfo>
+                <RatingText>{recommendedStrain.Positive_Effects}</RatingText>
+              </EffectsWrapper>
+            </QuickInfoDiv>
           </CardWrapper>
         </CardContainer>
       </RecommendedStrainsContainer>
