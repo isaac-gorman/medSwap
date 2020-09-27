@@ -49,7 +49,7 @@ const Spinner = styled.img`
 `;
 
 const CardContainer = styled.div`
-  width: 420px;
+  width: 200px;
   height: 600px;
   border: 0.5px solid #bdbdbd;
   margin-top: 10px;
@@ -89,6 +89,10 @@ const SaveTxt = styled.p`
 const SaveIcon = styled.img`
   width: 20px;
   height: 20px;
+`;
+
+const RecommendedStrainName = styled.h2`
+  font-family: "AGaramondPro-Bold";
 `;
 
 const RecommendedStrains = ({
@@ -152,11 +156,9 @@ const RecommendedStrains = ({
               <SaveTxt>Save</SaveTxt>
               <SaveIcon src={saveIcon} alt="save icon" />
             </SaveButton>
-            <h7>{recommendedStrain.Name}</h7>
-            <p style={{ fontSize: "0.75em" }}>
-              {recommendedStrain.Description}
-            </p>
-
+            <RecommendedStrainName>
+              {recommendedStrain.Name}
+            </RecommendedStrainName>
             {/* <IntroDataDiv>
               <IconDiv>
                 <TreatmentIcon />
